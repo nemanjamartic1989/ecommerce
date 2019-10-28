@@ -21,4 +21,19 @@ class CartController extends Controller
     	Cart::add($id, $product->product_name, 1, $product->product_price, 550, ['img'=>$product->image, "stock" => $product->stock]);
     	return back();
     }
+    
+    // Update Cart Item:
+    public function update(Request $request, $id){
+        $qty = $request->qty;
+        $product_id = $request->proId;
+        $product = Product::findOrFail($product_id);
+        $stock = $product->stock;
+        
+        if ($qty < $stock) {
+            Cart::update($id, $request->qty);
+            return back()->with('status', 'Cart is updated');
+        }else{
+            return back()->with('status', 'Please check your qty is more than product stock');
+        }
+    }
 }
