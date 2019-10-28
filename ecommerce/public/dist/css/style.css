@@ -1,0 +1,11 @@
+#mainNavbar{
+	background-color: #0c5460;
+}
+
+#imageLogo{
+	width: 15%;
+}
+
+#newProductForm, #listOfProducts, #listOfCategories{
+	margin-top: 5%;
+}
