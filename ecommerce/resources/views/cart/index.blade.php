@@ -87,7 +87,8 @@ $('#upCart<?php echo $i;?>').on('change keyup', function(){
                             </td>
                             <td class="cart_quantity">
                                 <form action="{{url('cart/update',$cartItem->rowId)}}" method="post" role="form">
-
+									@csrf
+                                    @method('PUT')
                                     <input type="hidden" name="_method" value="PUT">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <input type="hidden" name="proId" value="{{$cartItem->id}}"/>
