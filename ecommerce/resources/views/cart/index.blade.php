@@ -4,7 +4,7 @@
 <script>
     $(document).ready(function(){
         <?php for($i=1;$i<20;$i++){?>
-$('#upCart<?php echo $i;?>').on('change keyup', function(){
+        $('#upCart<?php echo $i;?>').on('change keyup', function(){
             var newqty = $('#upCart<?php echo $i;?>').val();
             var rowId = $('#rowId<?php echo $i;?>').val();
             var proId = $('#proId<?php echo $i;?>').val();
@@ -31,7 +31,7 @@ $('#upCart<?php echo $i;?>').on('change keyup', function(){
 <br>
 <section id="cart_items">
     <div class="container">
-        <div align="center">  <img src="{{asset('dist/img/empty-cart.png')}}"/></div>
+        <div align="center"><img src="{{asset('images/empty-shopping-cart.jpg')}}" width="100"/></div>
     </div>
 </section> <!--/#cart_items-->
 <?php } else { ?>
@@ -78,7 +78,7 @@ $('#upCart<?php echo $i;?>').on('change keyup', function(){
                                 <p><img src="{{url('images',$cartItem->options->img)}}" class="img-responsive" width="250"></p>
                             </td>
                             <td class="cart_description">
-                                <h4><a href="{{url('/productDetail')}}/{{$cartItem->id}}" style="color:blue">{{$cartItem->name}}</a></h4>
+                                <h4><a href="{{url('/productDetail')}}/{{$cartItem->id}}" id="productDetail">{{$cartItem->name}}</a></h4>
                                 <p>Product ID: {{$cartItem->id}}</p>
                                 <p>Only {{$cartItem->options->stock}} left</p>
                             </td>
@@ -87,14 +87,14 @@ $('#upCart<?php echo $i;?>').on('change keyup', function(){
                             </td>
                             <td class="cart_quantity">
                                 <form action="{{url('cart/update',$cartItem->rowId)}}" method="post" role="form">
-									@csrf
+                                    @csrf
                                     @method('PUT')
                                     <input type="hidden" name="_method" value="PUT">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <input type="hidden" name="proId" value="{{$cartItem->id}}"/>
-                                    <input type="number" size="2" value="{{$cartItem->qty}}" name="qty" id="upCart<?php echo $count;?>"
-                                           autocomplete="off" style="text-align:center; max-width:50px; "  MIN="1" MAX="1000">
-                                    <input type="submit" class="btn btn-primary" value="Update" styel="margin:5px">
+                                    <input type="number" size="2" value="{{$cartItem->qty}}" name="qty" id="upCart<?php echo $count;?>" class="qty-field"
+                                           autocomplete="off" MIN="1" MAX="1000">
+                                    <input type="submit" class="btn btn-primary" id="updateCart" value="Update">
                                 </form>
 
                                 <!--</div>-->
@@ -104,7 +104,7 @@ $('#upCart<?php echo $i;?>').on('change keyup', function(){
                             </td>
                             <td class="cart_delete">
                                 <button class="btn btn-primary">
-                                    <a class="cart_quantity_delete" style="background-color:red" href="{{url('/cart/remove')}}/{{$cartItem->rowId}}"><i class="fa fa-times">X</i></a>
+                                    <a class="cart_quantity_delete" href="{{url('/cart/remove')}}/{{$cartItem->rowId}}"><i class="fa fa-times">X</i></a>
                                 </button>
                             </td>
                         </tr>
