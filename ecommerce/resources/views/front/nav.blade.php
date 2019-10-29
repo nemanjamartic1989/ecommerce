@@ -1,5 +1,5 @@
-<nav id="mainNavbar" class="navbar navbar-expand-md navbar-dark" style="background-color: #0c5460;">
-  <a class="navbar-brand" href=""><img src="{{url('images/webshop.jpg')}}" width="15%"></a>
+<nav id="mainNavbar" class="navbar navbar-expand-md navbar-dark">
+  <a class="navbar-brand" href=""><img src="{{url('images/webshop.jpg')}}" id="logoImg"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
