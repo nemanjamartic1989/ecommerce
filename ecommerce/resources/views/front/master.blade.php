@@ -13,7 +13,8 @@
     <link href="{{asset('dist/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{{asset('album.css')}}" rel="stylesheet">
+    <link href="{{asset('dist/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('dist/css/album.css')}}" rel="stylesheet">
   </head>
 
   <body>
