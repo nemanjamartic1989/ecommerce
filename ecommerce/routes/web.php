@@ -14,7 +14,7 @@ Route::get('/productDetail/{id}', 'HomeController@productDetail');
 Route::get('/cart', 'CartController@index');
 Route::get('/cart/addItem/{id}', 'CartController@addItem');
 Route::put('/cart/update/{id}', 'CartController@update');
-
+Route::get('/cart/remove/{id}', 'CartController@destroy');
 
 // Admin Location:
 Auth::routes();
