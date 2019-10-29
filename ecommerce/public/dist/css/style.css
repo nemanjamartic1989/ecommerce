@@ -2,10 +2,28 @@
 	background-color: #0c5460;
 }
 
-#imageLogo{
+#logoImg{
 	width: 15%;
 }
 
 #newProductForm, #listOfProducts, #listOfCategories{
 	margin-top: 5%;
+}
+
+/*Cart section*/
+#updateCart{
+	margin:5px;
+}
+
+#productDetail{
+	color: blue;
+}
+
+.qty-field{
+	text-align:center; 
+	max-width:50px;
+}
+
+.cart_quantity_delete{
+	background-color:red;
 }
